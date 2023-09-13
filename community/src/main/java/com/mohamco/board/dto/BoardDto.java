@@ -1,12 +1,23 @@
 package com.mohamco.board.dto;
 
-import com.mohamco.board.entity.BoardEntity;
+import com.mohamco.board.entity.PostEntity;
 import java.time.LocalDateTime;
+import java.util.List;
+
 import lombok.Builder;
 import lombok.Getter;
 
 @Getter
 public class BoardDto {
+
+  @Builder
+  @Getter
+  public static class Response {
+    private String boardSeq;
+    private String boardName;
+    private String boardDesc;
+    private List<PostList> postList;
+  }
 
   @Builder
   @Getter
@@ -19,15 +30,15 @@ public class BoardDto {
     private Integer viewCount; // 조회수
     private Integer likeCount; // 좋아요 수
 
-    public static PostList of(BoardEntity boardEntity) {
+    public static PostList of(PostEntity postEntity) {
       return PostList.builder()
-              .postSeq(boardEntity.getPostSeq())
-              .title(boardEntity.getTitle())
-              .userSeq(boardEntity.getUserSeq())
-              .userName(boardEntity.getUserName())
-              .createdDt(boardEntity.getCreatedDt())
-              .viewCount(boardEntity.getViewCount())
-              .likeCount(boardEntity.getLikeCount())
+              .postSeq(postEntity.getPostSeq())
+              .title(postEntity.getTitle())
+              .userSeq(postEntity.getUserSeq())
+              .userName(postEntity.getUserName())
+              .createdDt(postEntity.getCreatedTs())
+              .viewCount(postEntity.getViewCount())
+              .likeCount(postEntity.getLikeCount())
               .build();
     }
   }
