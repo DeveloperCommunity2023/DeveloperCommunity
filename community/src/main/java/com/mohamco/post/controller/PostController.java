@@ -1,7 +1,7 @@
 package com.mohamco.post.controller;
 
-import com.mohamco.post.service.PostService;
 import com.mohamco.common.response.BaseResponse;
+import com.mohamco.post.service.PostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +21,7 @@ public class PostController {
   @GetMapping("/v1/{boardSeq}/{postSeq}")
   public ResponseEntity<?> getPost(@PathVariable("boardSeq") String boardSeq,
                                    @PathVariable("postSeq") String postSeq) {
-      return ResponseEntity.ok(BaseResponse.builder()
-              .data(postService.getPost(boardSeq, postSeq)).build());
+    return ResponseEntity.ok(BaseResponse.builder()
+        .data(postService.getPost(boardSeq, postSeq)).build());
   }
 }

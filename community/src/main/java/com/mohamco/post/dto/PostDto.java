@@ -1,8 +1,8 @@
 package com.mohamco.post.dto;
 
+import com.mohamco.board.entity.PostEntity;
 import java.time.LocalDateTime;
 import java.util.List;
-import com.mohamco.board.entity.PostEntity;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -23,22 +23,22 @@ public class PostDto {
     private String tag;
     private Integer likeCount;
     private Integer commentCount;
-    private List<commentList> commentList;
+    private List<CommentList> commentList;
   }
 
   @Builder
   @Getter
-  public static class commentList {
+  public static class CommentList {
     private String userProfileUrl;
     private String userSeq;
     private String userName;
     private LocalDateTime commentCreatedTs;
     private String commentContent;
 
-    public static PostDto.commentList of(PostEntity postEntity) {
-      return commentList.builder()
+    public static PostDto.CommentList of(PostEntity postEntity) {
+      return CommentList.builder()
           .userSeq(postEntity.getUserSeq())
           .build();
-      }
+    }
   }
 }
