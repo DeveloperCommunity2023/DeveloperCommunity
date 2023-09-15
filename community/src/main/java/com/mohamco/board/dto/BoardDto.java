@@ -3,7 +3,6 @@ package com.mohamco.board.dto;
 import com.mohamco.board.entity.PostEntity;
 import java.time.LocalDateTime;
 import java.util.List;
-
 import lombok.Builder;
 import lombok.Getter;
 
