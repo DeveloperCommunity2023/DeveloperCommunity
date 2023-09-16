@@ -1,16 +1,14 @@
 package com.mohamco.post.service;
 
-import com.mohamco.post.entity.PostEntity;
 import com.mohamco.board.repository.PostRepository;
 import com.mohamco.post.dto.PostDto;
 import com.mohamco.post.entity.CommentEntity;
-import com.mohamco.post.entity.PostTagMapEntity;
+import com.mohamco.post.entity.PostEntity;
 import com.mohamco.post.repository.CommentRepository;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.stream.Collectors;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor

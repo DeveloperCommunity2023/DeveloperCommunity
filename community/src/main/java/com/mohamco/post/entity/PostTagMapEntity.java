@@ -1,6 +1,5 @@
 package com.mohamco.post.entity;
 
-import static javax.persistence.FetchType.LAZY;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

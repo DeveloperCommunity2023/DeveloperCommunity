@@ -1,9 +1,8 @@
 package com.mohamco.post.dto;
 
+import com.mohamco.post.entity.CommentEntity;
 import java.time.LocalDateTime;
 import java.util.List;
-
-import com.mohamco.post.entity.CommentEntity;
 import lombok.Builder;
 import lombok.Getter;
 
