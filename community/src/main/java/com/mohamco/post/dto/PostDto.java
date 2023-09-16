@@ -3,6 +3,9 @@ package com.mohamco.post.dto;
 import com.mohamco.board.entity.PostEntity;
 import java.time.LocalDateTime;
 import java.util.List;
+
+import com.mohamco.post.entity.CommentEntity;
+import com.mohamco.post.entity.UserEntity;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -35,9 +38,13 @@ public class PostDto {
     private LocalDateTime commentCreatedTs;
     private String commentContent;
 
-    public static PostDto.CommentList of(PostEntity postEntity) {
+    public static CommentList of(CommentEntity commentEntity) {
       return CommentList.builder()
-          .userSeq(postEntity.getUserSeq())
+          .userSeq(commentEntity.getUserSeq())
+//          .userName(userEntity.getName())
+//          .userProfileUrl(userEntity.getProfileImageUrl())
+          .commentCreatedTs(commentEntity.getCreatedTs())
+          .commentContent(commentEntity.getContent())
           .build();
     }
   }
