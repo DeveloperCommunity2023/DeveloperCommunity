@@ -1,11 +1,14 @@
 package com.mohamco.post.entity;
 
+import static javax.persistence.FetchType.LAZY;
 import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.Getter;
 
@@ -50,4 +53,8 @@ public class CommentEntity {
 
   @Column(name = "comment_depth")
   private Integer commentDepth; // 댓글 깊이
+
+  @ManyToOne
+  @JoinColumn(name = "user_seq",referencedColumnName = "user_seq", insertable = false, updatable = false) // 누가 답변을 적었는지 알기 위함
+  private UserEntity user;
 }

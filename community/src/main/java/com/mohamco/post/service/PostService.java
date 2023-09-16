@@ -1,10 +1,10 @@
 package com.mohamco.post.service;
 
-import com.mohamco.board.dto.BoardDto;
-import com.mohamco.board.entity.PostEntity;
+import com.mohamco.post.entity.PostEntity;
 import com.mohamco.board.repository.PostRepository;
 import com.mohamco.post.dto.PostDto;
 import com.mohamco.post.entity.CommentEntity;
+import com.mohamco.post.entity.PostTagMapEntity;
 import com.mohamco.post.repository.CommentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -22,7 +22,6 @@ public class PostService {
     PostEntity p = postRepository.findByPostSeq(postSeq);
     List<CommentEntity> c = commentRepository.findAllByPostSeq(postSeq);
 
-
     return PostDto.Response.builder()
         .boardSeq(boardSeq)
         .title(p.getTitle())
@@ -31,7 +30,6 @@ public class PostService {
         .userName(p.getUserName())
         .postCreatedTs(p.getCreatedTs())
         .content(p.getContent())
-        .tag(p.getTag())
         .likeCount(p.getLikeCount())
         .commentCount(p.getCommentCount())
         .commentList(c.stream().map(PostDto.CommentList::of).collect(Collectors.toList()))
