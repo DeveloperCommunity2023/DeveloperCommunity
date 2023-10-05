@@ -1,4 +1,4 @@
-package com.mohamco.board.entity;
+package com.mohamco.post.entity;
 
 import java.time.LocalDateTime;
 import javax.persistence.Column;
@@ -39,9 +39,6 @@ public class PostEntity {
 
   @Column(name = "solve_yn")
   private String solveYn; // 해결여부(미해결: 0 / 해결: 1)
-
-  @Column(name = "tag")
-  private String tag; // 태그
 
   @Column(name = "created_ts", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
   private LocalDateTime createdTs; // 생성 일시

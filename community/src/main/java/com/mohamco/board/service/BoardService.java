@@ -2,9 +2,9 @@ package com.mohamco.board.service;
 
 import com.mohamco.board.dto.BoardDto;
 import com.mohamco.board.entity.BoardEntity;
-import com.mohamco.board.entity.PostEntity;
 import com.mohamco.board.repository.BoardRepository;
 import com.mohamco.board.repository.PostRepository;
+import com.mohamco.post.entity.PostEntity;
 import java.util.List;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;

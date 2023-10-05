@@ -1,6 +1,6 @@
 package com.mohamco.board.repository;
 
-import com.mohamco.board.entity.PostEntity;
+import com.mohamco.post.entity.PostEntity;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
