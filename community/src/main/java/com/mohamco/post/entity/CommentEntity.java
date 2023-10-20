@@ -18,13 +18,13 @@ public class CommentEntity {
   @Column(name = "comment_seq")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Id
-  private String commentSeq; // 댓글 아이디
+  private Long commentSeq; // 댓글 아이디
 
   @Column(name = "board_seq")
   private String boardSeq; // 게시판 아이디
 
   @Column(name = "post_seq")
-  private String postSeq; // 게시글 아이디
+  private Long postSeq; // 게시글 아이디
 
   @Column(name = "content")
   private String content; // 댓글 내용

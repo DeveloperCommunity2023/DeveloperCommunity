@@ -14,9 +14,9 @@ public class PostDto {
   public static class Response {
     private String boardSeq;
     private String boardName;
-    private String postSeq;
+    private Long postSeq;
     private String title;
-    private String userSeq;
+    private Long userSeq;
     private String userName;
     private LocalDateTime postCreatedTs;
     private String content;
