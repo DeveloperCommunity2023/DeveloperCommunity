@@ -32,7 +32,7 @@ public class PostEntity {
   private Integer noticeYn; // 공지 여부
 
   @Column(name = "user_seq")
-  private Longㅓ userSeq; // 작성자 아이디
+  private Long userSeq; // 작성자 아이디
 
   @Column(name = "user_name")
   private String userName; // 작성자 이름
