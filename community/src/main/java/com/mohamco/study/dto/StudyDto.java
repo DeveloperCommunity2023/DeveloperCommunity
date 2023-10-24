@@ -1,32 +1,28 @@
 package com.mohamco.study.dto;
 
-import com.mohamco.board.dto.BoardDto;
-import com.mohamco.post.entity.PostEntity;
 import com.mohamco.study.entity.StudyEntity;
+import java.util.List;
 import lombok.Builder;
 import lombok.Getter;
-
-import java.time.LocalDateTime;
-import java.util.List;
 
 @Getter
 public class StudyDto {
   @Builder
   @Getter
   public static class Response {
-    private Long studySeq;
     List<StudyDto.StudyList> studyList;
   }
 
   @Builder
   @Getter
-  public static class StudyList { // 게시글 리스트
-    private Long studySeq; //
-    private String studyName; //
-    private String studyDesc; //
-    private Integer studyCount; //
-    private String profileUrl;
-    private String headerUrl; //
+  public static class StudyList { // 스터디 리스트
+    private Long studySeq; // 스터디 아이디
+    private String studyName; // 스터디 이름
+    private String studyDesc; // 스터디 설명
+    private Integer studyCount; // 스터디 인원 수
+    private String profileUrl; // 스터디 프로필 이미지
+    private String headerUrl; // 스터디 헤더 이미지
+    private Integer recruitYn; // 스터디 모집 여부
 
 
     public static StudyList of(StudyEntity studyEntity) {
@@ -37,6 +33,7 @@ public class StudyDto {
           .studyCount(studyEntity.getStudyCount())
           .profileUrl(studyEntity.getProfileUrl())
           .headerUrl(studyEntity.getHeaderUrl())
+          .recruitYn(studyEntity.getRecruitYn())
           .build();
     }
   }

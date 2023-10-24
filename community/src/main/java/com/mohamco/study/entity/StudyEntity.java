@@ -1,10 +1,13 @@
 package com.mohamco.study.entity;
 
-
-import lombok.Getter;
-
-import javax.persistence.*;
 import java.time.LocalDateTime;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import lombok.Getter;
 
 @Getter
 @Entity
@@ -19,13 +22,13 @@ public class StudyEntity {
   private String studyName; // 스터디 이름
 
   @Column(name = "recruit_yn")
-  private String recruitYn; // 스터디 모집여부
+  private Integer recruitYn; // 스터디 모집여부
 
   @Column(name = "recruit_type")
-  private String recruitType; // 스터디 종류
+  private Integer recruitType; // 스터디 종류
 
   @Column(name = "open_yn")
-  private String openYn; // 공개여부
+  private Integer openYn; // 공개여부
 
   @Column(name = "study_count")
   private Integer studyCount; // 스터디 인원 수
@@ -34,7 +37,7 @@ public class StudyEntity {
   private LocalDateTime closingDt; // 모집 마감일
 
   @Column(name = "manager_seq")
-  private String managerSeq; // 스터디장 아이디
+  private Long managerSeq; // 스터디장 아이디
 
   @Column(name = "register_type")
   private Integer registerType; // 가입 종류
@@ -49,5 +52,5 @@ public class StudyEntity {
   private String profileUrl; // 스터디 프로필 이미지 url
 
   @Column(name = "study_desc")
-  private String StudyDesc; // 스터디 설명
+  private String studyDesc; // 스터디 설명
 }

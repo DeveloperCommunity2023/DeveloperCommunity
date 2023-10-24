@@ -29,7 +29,7 @@ public class PostDto {
   @Getter
   public static class CommentList {
     private String userProfileUrl;
-    private String userSeq;
+    private Long userSeq;
     private String userName;
     private LocalDateTime commentCreatedTs;
     private String commentContent;

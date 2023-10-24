@@ -30,7 +30,7 @@ public class CommentEntity {
   private String content; // 댓글 내용
 
   @Column(name = "user_seq")
-  private String userSeq; // 작성자 아이디
+  private Long userSeq; // 작성자 아이디
 
   @Column(name = "user_name")
   private String userName; // 작성자 이름

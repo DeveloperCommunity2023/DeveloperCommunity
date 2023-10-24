@@ -18,9 +18,9 @@ public class PostController {
    * @param postSeq (게시글 아이디)
    * @return 게시글 상세를 반환한다
    */
-  @GetMapping("/v1/{boardSeq}/{postSeq}")
+  @GetMapping("/v1/board/{boardSeq}/{postSeq}")
   public ResponseEntity<?> getPost(@PathVariable("boardSeq") String boardSeq,
-                                   @PathVariable("postSeq") String postSeq) {
+                                   @PathVariable("postSeq") Long postSeq) {
     return ResponseEntity.ok(BaseResponse.builder()
         .data(postService.getPost(boardSeq, postSeq)).build());
   }
