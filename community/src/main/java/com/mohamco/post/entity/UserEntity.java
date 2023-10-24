@@ -15,7 +15,7 @@ public class UserEntity {
   @Column(name = "user_seq")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Id
-  private String userSeq; // 회원 아이디
+  private Long userSeq; // 회원 아이디
 
   @Column(name = "name")
   private String name; // 회원 이름

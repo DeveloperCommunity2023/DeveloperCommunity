@@ -14,9 +14,9 @@ public class PostDto {
   public static class Response {
     private String boardSeq;
     private String boardName;
-    private String postSeq;
+    private Long postSeq;
     private String title;
-    private String userSeq;
+    private Long userSeq;
     private String userName;
     private LocalDateTime postCreatedTs;
     private String content;
@@ -29,7 +29,7 @@ public class PostDto {
   @Getter
   public static class CommentList {
     private String userProfileUrl;
-    private String userSeq;
+    private Long userSeq;
     private String userName;
     private LocalDateTime commentCreatedTs;
     private String commentContent;

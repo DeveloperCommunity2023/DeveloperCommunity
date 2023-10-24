@@ -21,9 +21,9 @@ public class BoardDto {
   @Builder
   @Getter
   public static class PostList { // 게시글 리스트
-    private String postSeq; // 게시글 아이디
+    private Long postSeq; // 게시글 아이디
     private String title; // 제목
-    private String userSeq; // 작성자 아이디
+    private Long userSeq; // 작성자 아이디
     private String userName; // 작성자 이름
     private LocalDateTime createdDt; // 작성 일시
     private Integer viewCount; // 조회수

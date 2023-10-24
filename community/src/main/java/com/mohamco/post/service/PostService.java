@@ -16,7 +16,7 @@ public class PostService {
   private final PostRepository postRepository;
   private final CommentRepository commentRepository;
 
-  public PostDto.Response getPost(String boardSeq, String postSeq) {
+  public PostDto.Response getPost(String boardSeq, Long postSeq) {
     PostEntity p = postRepository.findByPostSeq(postSeq);
     List<CommentEntity> c = commentRepository.findAllByPostSeq(postSeq);
 

@@ -17,7 +17,7 @@ public class PostEntity {
   @Column(name = "post_seq")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Id
-  private String postSeq; // 게시글 아이디
+  private Long postSeq; // 게시글 아이디
 
   @Column(name = "board_seq")
   private String boardSeq; // 게시판 아이디
@@ -32,7 +32,7 @@ public class PostEntity {
   private Integer noticeYn; // 공지 여부
 
   @Column(name = "user_seq")
-  private String userSeq; // 작성자 아이디
+  private Long userSeq; // 작성자 아이디
 
   @Column(name = "user_name")
   private String userName; // 작성자 이름

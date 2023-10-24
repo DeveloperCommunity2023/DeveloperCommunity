@@ -18,7 +18,7 @@ public class BoardController {
    * @param boardSeq (게시판 아이디)
    * @return 게시글 리스트를 반환한다
    */
-  @GetMapping("/v1/{boardSeq}")
+  @GetMapping("/v1/board/{boardSeq}")
   public ResponseEntity<?> getBoard(@PathVariable("boardSeq") String boardSeq) {
     return ResponseEntity.ok(BaseResponse.builder()
             .data(boardService.getPostList(boardSeq)).build());
