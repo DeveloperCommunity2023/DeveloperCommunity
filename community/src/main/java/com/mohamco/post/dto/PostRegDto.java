@@ -12,14 +12,14 @@ public class PostRegDto {
   private String boardSeq;
   private String title;
   private String content;
-  private Integer notice_yn;
+  private Integer noticeYn;
   private Long userSeq;
   private String userName;
   private LocalDateTime postCreatedTs;
-  private Integer view_count;
+  private Integer viewCount;
   private Integer likeCount;
   private Integer commentCount;
-  private Integer solve_yn;
+  private Integer solveYn;
 
 
 
