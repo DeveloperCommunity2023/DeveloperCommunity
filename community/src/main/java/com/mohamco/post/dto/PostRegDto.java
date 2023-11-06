@@ -22,12 +22,16 @@ public class PostRegDto {
   private Integer solveYn;
 
 
-
   public PostEntity toEntity() {
     return PostEntity.builder()
-      .postSeq(postSeq).boardSeq(boardSeq).title(title)
-      .content(content).userSeq(userSeq).userName(userName)
-      .likeCount(likeCount).commentCount(commentCount)
+      .postSeq(postSeq)
+      .boardSeq(boardSeq)
+      .title(title)
+      .content(content)
+      .userSeq(userSeq)
+      .userName(userName)
+      .likeCount(likeCount)
+      .commentCount(commentCount)
       .build();
   }
 }

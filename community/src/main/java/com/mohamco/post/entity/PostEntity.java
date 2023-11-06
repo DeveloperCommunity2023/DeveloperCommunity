@@ -7,15 +7,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import lombok.AllArgsConstructor;
+import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Getter
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "post")
 public class PostEntity {
 
