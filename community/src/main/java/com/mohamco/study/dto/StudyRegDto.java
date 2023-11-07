@@ -20,6 +20,7 @@ public class StudyRegDto { // 스터디 등록
         .studyDesc(studyDesc)
         .openYn(openYn)
         .registerType(registerType)
+        .studyCount(studyCount)
         .build();
   }
 }

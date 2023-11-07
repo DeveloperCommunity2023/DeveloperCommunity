@@ -3,10 +3,8 @@ package com.mohamco.post.dto;
 import com.mohamco.post.entity.PostEntity;
 import java.time.LocalDateTime;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 @Getter
-@NoArgsConstructor
 public class PostRegDto {
   private Long postSeq;
   private String boardSeq;

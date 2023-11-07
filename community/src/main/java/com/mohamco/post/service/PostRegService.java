@@ -14,7 +14,7 @@ public class PostRegService {
   private final PostRepository postRepository;
 
   @Transactional
-  public String save(PostRegDto regDto) {
-    return postRepository.save(regDto.toEntity()).getUserName();
+  public Object save(PostRegDto regDto) {
+    return postRepository.save(regDto.toEntity());
   }
 }
