@@ -28,6 +28,7 @@ public class BoardDto {
     private LocalDateTime createdDt; // 작성 일시
     private Integer viewCount; // 조회수
     private Integer likeCount; // 좋아요 수
+    private Integer commentCount; // 댓글 수
 
     public static PostList of(PostEntity postEntity) {
       return PostList.builder()
@@ -38,6 +39,7 @@ public class BoardDto {
               .createdDt(postEntity.getCreatedTs())
               .viewCount(postEntity.getViewCount())
               .likeCount(postEntity.getLikeCount())
+              .commentCount(postEntity.getCommentCount())
               .build();
     }
   }
