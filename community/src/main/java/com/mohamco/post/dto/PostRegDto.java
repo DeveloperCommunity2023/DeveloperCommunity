@@ -3,10 +3,8 @@ package com.mohamco.post.dto;
 import com.mohamco.post.entity.PostEntity;
 import java.time.LocalDateTime;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 @Getter
-@NoArgsConstructor
 public class PostRegDto {
   private Long postSeq;
   private String boardSeq;
@@ -22,12 +20,16 @@ public class PostRegDto {
   private Integer solveYn;
 
 
-
   public PostEntity toEntity() {
     return PostEntity.builder()
-      .postSeq(postSeq).boardSeq(boardSeq).title(title)
-      .content(content).userSeq(userSeq).userName(userName)
-      .likeCount(likeCount).commentCount(commentCount)
+      .postSeq(postSeq)
+      .boardSeq(boardSeq)
+      .title(title)
+      .content(content)
+      .userSeq(userSeq)
+      .userName(userName)
+      .likeCount(likeCount)
+      .commentCount(commentCount)
       .build();
   }
 }

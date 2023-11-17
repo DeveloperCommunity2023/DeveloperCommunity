@@ -7,10 +7,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
 @Entity
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "study")
 public class StudyEntity {
   @Column(name = "study_seq")
@@ -53,4 +57,17 @@ public class StudyEntity {
 
   @Column(name = "study_desc")
   private String studyDesc; // 스터디 설명
+
+
+  @Builder
+  public StudyEntity(Long studySeq, String studyName,
+                     String studyDesc, Integer openYn,
+                     Integer registerType, Integer studyCount) {
+    this.studySeq = studySeq;
+    this.studyName = studyName;
+    this.studyDesc = studyDesc;
+    this.openYn = openYn;
+    this.registerType = registerType;
+    this.studyCount = studyCount;
+  }
 }

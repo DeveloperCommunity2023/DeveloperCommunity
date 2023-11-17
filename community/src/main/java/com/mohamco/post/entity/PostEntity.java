@@ -7,16 +7,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import lombok.AllArgsConstructor;
+import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Builder
 @Getter
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "post")
 public class PostEntity {
 
@@ -60,4 +58,18 @@ public class PostEntity {
 
   @Column(name = "comment_count")
   private Integer commentCount; // 댓글 수
+
+  @Builder
+  public PostEntity(String boardSeq, Long postSeq,
+                    String title, Long userSeq, String content, String userName,
+                    Integer likeCount, Integer commentCount) {
+    this.postSeq = postSeq;
+    this.boardSeq = boardSeq;
+    this.title = title;
+    this.userSeq = userSeq;
+    this.content = content;
+    this.userName = userName;
+    this.likeCount = likeCount;
+    this.commentCount = commentCount;
+  }
 }

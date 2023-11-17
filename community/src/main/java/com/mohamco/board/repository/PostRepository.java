@@ -9,4 +9,5 @@ public interface PostRepository extends JpaRepository<PostEntity, Long> {
   List<PostEntity> findAllByBoardSeq(String boardSeq);
 
   PostEntity findByPostSeq(Long postSeq);
+
 }

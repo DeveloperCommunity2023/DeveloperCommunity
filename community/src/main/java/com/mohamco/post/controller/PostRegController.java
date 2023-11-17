@@ -1,8 +1,10 @@
 package com.mohamco.post.controller;
 
+import com.mohamco.common.response.BaseResponse;
 import com.mohamco.post.dto.PostRegDto;
 import com.mohamco.post.service.PostRegService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,7 +23,8 @@ public class PostRegController {
   */
 
   @PostMapping("/v1/board/posts")
-  public String postSave(@RequestBody PostRegDto regDto) {
-    return postRegService.save(regDto);
+  public ResponseEntity<?> postSave(@RequestBody PostRegDto regDto) {
+    return  ResponseEntity.ok(BaseResponse.builder()
+        .data(postRegService.save(regDto)));
   }
 }
