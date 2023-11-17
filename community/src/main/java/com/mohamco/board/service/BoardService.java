@@ -5,6 +5,7 @@ import com.mohamco.board.entity.BoardEntity;
 import com.mohamco.board.repository.BoardRepository;
 import com.mohamco.board.repository.PostRepository;
 import com.mohamco.post.entity.PostEntity;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
@@ -28,11 +29,16 @@ public class BoardService {
     BoardEntity b = boardRepository.findByBoardSeq(boardSeq);
     List<PostEntity> p = postRepository.findAllByBoardSeq(boardSeq);
 
+
+
     return BoardDto.Response.builder()
             .boardSeq(b.getBoardSeq())
             .boardName(b.getBoardName())
             .boardDesc(b.getBoardDesc())
-            .postList(p.stream().map(BoardDto.PostList::of).collect(Collectors.toList()))
+            .postList(p.stream()
+                .map(BoardDto.PostList::of)
+                .sorted(Comparator.comparing(BoardDto.PostList::getPostSeq).reversed())
+                .collect(Collectors.toList()))
             .build();
 
   }
