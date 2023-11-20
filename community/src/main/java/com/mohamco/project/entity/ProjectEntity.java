@@ -1,13 +1,16 @@
 package com.mohamco.project.entity;
 
-
+import java.time.LocalDateTime;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Getter
 @Entity
@@ -54,10 +57,11 @@ public class ProjectEntity {
 
   @Column(name = "project_desc")
   private String projectDesc; // 프로젝트 설명
+
   @Builder
   public ProjectEntity(Long projectSeq, String projectName,
                        String projectDesc, Integer openYn,
-                       Integer registerType, Integer projectCount){
+                       Integer registerType, Integer projectCount) {
     this.projectSeq = projectSeq;
     this.projectName = projectName;
     this.projectDesc = projectDesc;

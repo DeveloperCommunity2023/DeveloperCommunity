@@ -17,7 +17,7 @@ public class ProjectController {
    * @return 프로젝트 리스트를 반환한다.
    */
   @GetMapping("/v1/project/main")
-  public ResponseEntity<?> getProject(){
+  public ResponseEntity<?> getProject() {
     return ResponseEntity.ok(BaseResponse.builder()
             .data(projectService.getProjectList()).build());
   }
