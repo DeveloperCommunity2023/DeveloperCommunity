@@ -19,8 +19,8 @@ public class StudyService {
     List<StudyEntity> s = studyRepository.findAllByOpenYn(1);
 
     return StudyDto.Response.builder()
-          .studyList(s.stream().map(StudyDto.StudyList::of).collect(Collectors.toList()))
-          .build();
+            .studyList(s.stream().map(StudyDto.StudyList::of).collect(Collectors.toList()))
+            .build();
   }
 
   @Transactional
