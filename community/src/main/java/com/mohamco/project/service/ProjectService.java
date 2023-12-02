@@ -17,7 +17,21 @@ public class ProjectService {
     List<ProjectEntity> p = projectRepository.findAllByOpenYn(1);
 
     return ProjectDto.Response.builder()
-            .projectList(p.stream().map(ProjectDto.ProjectList::of).collect(Collectors.toList()))
+            .projectList(p.stream().map(ProjectDto.Project::of).collect(Collectors.toList()))
+            .build();
+  }
+
+  public ProjectDto.CommonResponse getProject(Long projectSeq) {
+    ProjectEntity p = projectRepository.findProjectByProjectSeq(projectSeq);
+
+    return ProjectDto.CommonResponse.builder()
+            .projectSeq(projectSeq)
+            .projectName(p.getProjectName())
+            .projectDesc(p.getProjectDesc())
+            .projectCount(p.getProjectCount())
+            .profileUrl(p.getProfileUrl())
+            .headerUrl(p.getHeaderUrl())
+            .recruitYn(p.getRecruitYn())
             .build();
   }
 
