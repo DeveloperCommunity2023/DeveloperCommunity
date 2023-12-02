@@ -10,7 +10,9 @@ public class StudyDto {
   @Builder
   @Getter
   public static class Response {
-    List<StudyDto.StudyList> studyList;
+
+    private Integer studyListCount;
+    private List<StudyDto.StudyList> studyList;
   }
 
   @Builder
